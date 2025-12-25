@@ -29,7 +29,11 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Routes
 app.get('/api/test', (req, res) => {
-  res.json({ message: 'Backend server is running!' });
+  res.json({ 
+    message: 'Backend server is running!',
+    timestamp: new Date().toISOString(),
+    env: process.env.NODE_ENV || 'development'
+  });
 });
 
 app.use('/api/auth', authRoutes);

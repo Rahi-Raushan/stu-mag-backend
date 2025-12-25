@@ -8,10 +8,13 @@ const router = express.Router();
 // GET /courses - Public route (no auth required)
 router.get('/', async (req, res) => {
   try {
+    console.log('Fetching courses...');
     const courses = await Course.find();
+    console.log('Courses found:', courses.length);
     res.json(courses);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error('Error fetching courses:', error);
+    res.status(500).json({ message: error.message, error: error.toString() });
   }
 });
 
