@@ -57,6 +57,30 @@ const seedData = async () => {
       {
         title: 'Software Engineering',
         description: 'Software development lifecycle, testing, and project management'
+      },
+      {
+        title: 'Data Structures & Algorithms',
+        description: 'Advanced data structures, algorithm analysis, and optimization'
+      },
+      {
+        title: 'Machine Learning',
+        description: 'Introduction to ML algorithms, neural networks, and AI'
+      },
+      {
+        title: 'Mobile App Development',
+        description: 'Android and iOS app development using modern frameworks'
+      },
+      {
+        title: 'Cybersecurity',
+        description: 'Network security, ethical hacking, and data protection'
+      },
+      {
+        title: 'Cloud Computing',
+        description: 'AWS, Azure, Google Cloud platforms and services'
+      },
+      {
+        title: 'Digital Marketing',
+        description: 'SEO, social media marketing, and online advertising'
       }
     ];
     

@@ -5,8 +5,8 @@ const auth = require('../middleware/auth');
 const { adminOnly } = require('../middleware/roles');
 const router = express.Router();
 
-// GET /courses - Admin and Student
-router.get('/', auth, async (req, res) => {
+// GET /courses - Public route (no auth required)
+router.get('/', async (req, res) => {
   try {
     const courses = await Course.find();
     res.json(courses);
