@@ -16,7 +16,7 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'http://localhost:5173', 
-    'https://your-frontend-app.vercel.app'
+    'https://stu-mag-frontend.onrender.com'
   ],
   credentials: true
 }));
