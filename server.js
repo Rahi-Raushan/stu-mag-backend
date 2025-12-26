@@ -51,6 +51,22 @@ const connectDB = async () => {
 connectDB();
 
 // Health check route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Student Management System Backend API',
+    status: 'Running',
+    version: '1.0.0',
+    endpoints: {
+      health: '/api/health',
+      test: '/api/test',
+      auth: '/api/auth',
+      students: '/api/students',
+      courses: '/api/courses',
+      requests: '/api/requests'
+    }
+  });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK',
