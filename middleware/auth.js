@@ -10,7 +10,7 @@ const auth = async (req, res, next) => {
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const student = await Student.findById(decoded.id);
+    const student = await Student.findById(decoded.id).select('+name +email +contactNumber');
     
     if (!student) {
       return res.status(401).json({ message: 'Invalid token.' });
@@ -19,6 +19,7 @@ const auth = async (req, res, next) => {
     req.user = student;
     next();
   } catch (error) {
+    console.error('Auth error:', error);
     res.status(401).json({ message: 'Invalid token.' });
   }
 };

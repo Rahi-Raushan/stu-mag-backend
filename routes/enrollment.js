@@ -10,7 +10,10 @@ router.post('/:courseId', auth, studentOnly, async (req, res) => {
     const enrollment = new Enrollment({
       student: req.user._id,
       course: req.params.courseId,
-      status: 'pending'
+      status: 'pending',
+      studentName: req.user.name,
+      studentEmail: req.user.email,
+      studentPhone: req.user.contactNumber
     });
     await enrollment.save();
     res.status(201).json({ message: 'Enrollment request submitted. Waiting for admin approval.' });
